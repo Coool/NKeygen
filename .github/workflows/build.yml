@@ -31,7 +31,7 @@ jobs:
       - name: Build project
         run: |
           vcpkg integrate install
-          echo "CL=/utf-8" | Out-File -FilePath $env:GITHUB_ENV
+          echo "CL=/utf-8" >> $GITHUB_ENV
           msbuild navicat-keygen.sln /p:Configuration=Release /p:Platform=x86
       
       - name: Upload artifacts
@@ -60,7 +60,7 @@ jobs:
       - name: Build project
         run: |
           vcpkg integrate install
-          echo "CL=/utf-8" | Out-File -FilePath $env:GITHUB_ENV
+          echo "CL=/utf-8" >> $GITHUB_ENV
           msbuild navicat-keygen.sln /p:Configuration=Release /p:Platform=x64
       
       - name: Upload artifacts
